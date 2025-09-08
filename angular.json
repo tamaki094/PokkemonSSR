@@ -10,6 +10,29 @@
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/pokemon-ssr-server",
+            "main": "src/main.server.ts",
+            "tsConfig": "tsconfig.server.json"
+          }
+        },
+        "ssr": {
+          "builder": "@angular-devkit/build-angular:ssr",
+          "options": {
+            "browserTarget": "pokemon-ssr:build",
+            "serverTarget": "pokemon-ssr:server"
+          }
+        },
+        "prerender": {
+          "builder": "@angular-devkit/build-angular:prerender",
+          "options": {
+            "browserTarget": "pokemon-ssr:build",
+            "serverTarget": "pokemon-ssr:server",
+            "routes": ["/"]
+          }
+        },
         "build": {
           "builder": "@angular/build:application",
           "options": {
@@ -23,7 +46,12 @@
             ],
             "styles": [
               "src/styles.css"
-            ]
+            ],
+            "server": "src/main.server.ts",
+            "outputMode": "server",
+            "ssr": {
+              "entry": "src/server.ts"
+            }
           },
           "configurations": {
             "production": {
@@ -81,5 +109,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "f92e21cf-e152-420f-9e0b-cb4890545aa0"
   }
 }
