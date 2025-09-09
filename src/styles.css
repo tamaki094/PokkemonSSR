@@ -1,2 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
+
+button {
+  /* Tailwind utility classes como si fueran CSS normal */
+  background-color: rgb(59 130 246); /* bg-blue-500 */
+  color: white;                      /* text-white */
+  padding: 1rem;                     /* py-4 */
+  padding-left: 1rem;               /* px-4 */
+  padding-right: 1rem;
+  border-radius: 0.5rem;            /* rounded */
+  transition: all 0.2s ease-in-out; /* transition-all */
+}
+
+button:hover {
+  background-color: rgb(37 99 235); /* hover:bg-blue-600 */
+}
+
+button:disabled {
+  background-color: rgb(71 85 105); /* disabled:bg-slate-600 */
+}
+
+

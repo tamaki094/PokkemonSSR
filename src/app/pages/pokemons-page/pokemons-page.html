@@ -1,1 +1,28 @@
-<p>pokemons-page works!</p>
+<h1 class="text-3xl">Listado de Pokemons</h1>
+<h2 class="text-xl">Pagina Actual</h2>
+
+<hr class="my-2">
+
+<!-- TODO: Pokemon list -->
+ @if(!isLoading()) {
+  <pokemon-list  [pokemons]="pokemons()" />
+ }
+ @else {
+  <pokemon-list-skeleton />
+ }
+
+
+
+<!-- TODO: Pokemon list skeleton -->
+
+
+
+<!-- TODO: Pokemon list pagination -->
+<div class="flex justify-between">
+  <button class="mt-2">
+    Anteriores
+  </button>
+  <button>
+    Siguientes
+  </button>
+</div>
