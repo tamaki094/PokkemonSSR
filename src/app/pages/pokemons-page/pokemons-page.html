@@ -1,10 +1,11 @@
 <h1 class="text-3xl">Listado de Pokemons</h1>
-<h2 class="text-xl">Pagina Actual</h2>
+<h2 class="text-xl">Pagina Actual: {{currentpage()}}</h2>
 
 <hr class="my-2">
+<div class="bg-testcolor">Test</div>
 
 <!-- TODO: Pokemon list -->
- @if(!isLoading()) {
+ @if(pokemons()) {
   <pokemon-list  [pokemons]="pokemons()" />
  }
  @else {
@@ -19,10 +20,10 @@
 
 <!-- TODO: Pokemon list pagination -->
 <div class="flex justify-between">
-  <button class="mt-2">
+  <button class="mt-2" (click)="loadPokemons(-1)">
     Anteriores
   </button>
-  <button>
+  <button class="mt-2" (click)="loadPokemons(+1)">
     Siguientes
   </button>
 </div>
