@@ -13,7 +13,7 @@
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/pokemon-ssr-server",
+            "outputPath": "dist/pokemon-ssr",
             "main": "src/main.server.ts",
             "tsConfig": "tsconfig.server.json"
           }
@@ -30,12 +30,13 @@
           "options": {
             "browserTarget": "pokemon-ssr:build",
             "serverTarget": "pokemon-ssr:server",
-            "routes": ["/"]
+            "routesFile": "routes.txt"
           }
         },
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "outputPath": "dist/pokemon-ssr",
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
@@ -48,7 +49,6 @@
               "src/styles.css"
             ],
             "server": "src/main.server.ts",
-            "outputMode": "server",
             "ssr": {
               "entry": "src/server.ts"
             }
