@@ -10,7 +10,7 @@ describe('App', () => {
   let compiled: HTMLElement;
 
   @Component({
-    selector: 'navbar',
+    selector: 'navbar-component',
     standalone: true,
     template: '<nav>Mock Navbar</nav>'
   })
@@ -45,7 +45,7 @@ describe('App', () => {
   });
 
   it('should render the navbar and router-outlet', () => {
-    expect(compiled.querySelector('navbar')).toBeTruthy();
+    expect(compiled.querySelector('navbar-component')).toBeTruthy();
     expect(compiled.querySelector('router-outlet')).toBeTruthy();
   });
 

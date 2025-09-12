@@ -31,11 +31,6 @@ export default class PricingPage implements OnInit {
     // });
 
     document.title = 'Pricing Page';
-    console.log({hola :'mundo'});
-    console.log(this.platform);
-
-    console.log(isPlatformBrowser(this.platform));
-
     if(!isPlatformServer(this.platform)){
       document.title = 'Pricing Page';
     }

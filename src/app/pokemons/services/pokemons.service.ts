@@ -28,7 +28,7 @@ export class PokemonsService {
         return simplePokemons;
       }),
       tap(resp => {
-        console.log({resp});
+        // console.log({resp});
       })
     )
   }

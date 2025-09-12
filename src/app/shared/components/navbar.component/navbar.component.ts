@@ -3,7 +3,7 @@ import { RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
 
 
 @Component({
-  selector: 'navbar',
+  selector: 'navbar-component',
   imports: [RouterLink, RouterLinkActive],
   templateUrl: './navbar.component.html',
   styles: ``
